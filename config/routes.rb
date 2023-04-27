@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  # Show all checklists
-  get '/checklists', to: 'checklists#index'
+  # 1️⃣ Show all checklists
+  # get '/checklists', to: 'checklists#index'
+
+  # 2️⃣ Create new checklist
+  # get '/checklists/new', to: 'checklists#new'
+  # post '/checklists', to: 'checklists#create'
+
+  resources :checklists, only: [:index, :new, :create]
 end

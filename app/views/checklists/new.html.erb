@@ -1,0 +1,7 @@
+<%# form to create new checklist  %>
+<%= simple_form_for(@checklist) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
