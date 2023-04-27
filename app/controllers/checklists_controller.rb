@@ -8,9 +8,13 @@ class ChecklistsController < ApplicationController
   end
 
   def create
-    @checklist = Checklist.new(params[:checklist])
-    @checklist.save
-    redirect_to checklists_path(@checklist)
+    @checklist = Checklist.new(checklist_params)
+    @checklist.user_id = current_user.id
+    if @checklist.save
+      redirect_to checklists_path(@checklist), notice: 'Checklist created successfully'
+    else
+      render :new
+    end
   end
 
   private
