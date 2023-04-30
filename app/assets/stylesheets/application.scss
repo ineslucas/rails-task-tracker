@@ -10,3 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// For the whole app:
+
+body {
+  background-color: $dark-blue;
+}
