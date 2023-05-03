@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # post '/checklists', to: 'checklists#create'
 
   resources :checklists, only: [:index, :new, :create, :show] do
-    resources :tasks, only: [:new, :create]
+    resources :tasks, only: [:new, :create, :edit, :update, :destroy, :show] # falta o index
   end
 
 end

@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   before_action :set_checklist
 
   # method 'new' not needed
@@ -12,6 +13,16 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @task = @checklist.tasks.find(params[:id])
+    if @task.destroy
+      flash[:success] = "Task has been deleted"
+    else
+      flash[:error] = "Task could not be deleted"
+    end
+    redirect_to @checklist, status: :see_other
   end
 
   private
