@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   # get '/checklists/new', to: 'checklists#new'
   # post '/checklists', to: 'checklists#create'
 
-  resources :checklists, only: [:index, :new, :create]
+  resources :checklists, only: [:index, :new, :create, :show]
 end
