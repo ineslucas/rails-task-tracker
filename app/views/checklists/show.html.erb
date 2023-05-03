@@ -1,2 +1,13 @@
 <h2><%= @checklist.title %></h2>
 <p><%= @checklist.description %></p>
+
+<div id="tasks_wrapper">
+  <%= render @checklist.tasks %>
+  <div id="form">
+    <%= render "tasks/form" %>
+  </div>
+</div>
+
+<%# later on add: %>
+<%# <%= link to 'Edit' edit_todo_list_path(@todo_list) %>
+<%# <%= link to 'Back', tasks_path %>
