@@ -27,7 +27,7 @@ class TasksController < ApplicationController
     redirect_to @checklist, status: :see_other
   end
 
-  def complete
+  def completed
     @task.update_attribute(:completed, true)
     redirect_to @checklist, notice: "Task completed"
   end
