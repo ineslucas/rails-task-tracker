@@ -1,4 +1,5 @@
 <%# form to create new checklist  %>
+<%# could create a class for forms to style all forms %>
 <%= simple_form_for(@checklist) do |f| %>
   <%= f.input :title %>
   <%= f.input :category, collection: Checklist.categories.keys %>

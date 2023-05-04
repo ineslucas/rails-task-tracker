@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # get '/checklists/new', to: 'checklists#new'
   # post '/checklists', to: 'checklists#create'
 
-  resources :checklists, only: [:index, :new, :create, :show, :destroy] do
+  resources :checklists, only: [:index, :new, :create, :show, :destroy, :edit, :update] do
     resources :tasks, only: [:new, :create, :edit, :update, :destroy, :show] do # only missing index
     # In contrast, a collection route acts on the entire collection of resources, rather than on a specific member. For example, a new or index action in a controller usually acts on the entire collection of resources, rather than a specific member of that collection.
       member do
