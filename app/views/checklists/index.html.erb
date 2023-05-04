@@ -6,6 +6,7 @@
     <%= link_to checklist_path(checklist) do %>
       <li><%= checklist.title %></li>
       <li><%= checklist.description %></li>
+      <%= link_to "Delete", checklist_path(checklist), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <% end %>
   <% end %>
 </ul>
