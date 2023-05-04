@@ -1,0 +1,13 @@
+<h2><%= @checklist.title %></h2>
+<p><%= @checklist.description %></p>
+
+<div id="tasks_wrapper">
+  <%= render @checklist.tasks %>
+  <div id="form">
+    <%= render "tasks/form" %>
+  </div>
+</div>
+
+<%# edit button is for the title and details of the checklist!!! %>
+<%# <%= link to 'Edit' edit_todo_list_path(@todo_list) %>
+<%= link_to 'Back', url_for(:back) %>

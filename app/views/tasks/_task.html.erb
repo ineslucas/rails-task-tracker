@@ -1,0 +1,28 @@
+<div class="row clearfix">
+  <% if task.completed? %>
+    <div class="complete">
+      <%= link_to "Mark as Complete", completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } %>
+    </div>
+    <div class="task">
+      <p style="opacity: 0.4;"><strike><%= task.title %></strike></p>
+    </div>
+    <div class="trash">
+      <%= link_to "Delete", checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+  <% else %>
+  <%# if the task has not been marked as completed, then show the task content(or title?) in its normal form.  %>
+    <div class="complete">
+      <%= link_to "Mark as Complete", completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } %>
+        <%# checklist_task_path(@checklist, task.id) is actually where I want to be redirected to, once the action has been completed %>
+
+        <%# It's a route helper method that generates a URL for the destroy action of the TasksController for a specific task belonging to a given Checklist object.
+        The @checklist object is passed in as an argument to the route helper method to generate the correct URL. %>
+    </div>
+    <div class="task">
+      <p><%= task.title %></p>
+    </div>
+    <div class="trash">
+      <%= link_to "Delete", checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+  <% end %>
+</div>

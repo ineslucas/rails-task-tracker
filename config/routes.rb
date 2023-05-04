@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "checklists#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -13,5 +13,13 @@ Rails.application.routes.draw do
   # get '/checklists/new', to: 'checklists#new'
   # post '/checklists', to: 'checklists#create'
 
-  resources :checklists, only: [:index, :new, :create]
+  resources :checklists, only: [:index, :new, :create, :show, :destroy] do
+    resources :tasks, only: [:new, :create, :edit, :update, :destroy, :show] do # only missing index
+    # In contrast, a collection route acts on the entire collection of resources, rather than on a specific member. For example, a new or index action in a controller usually acts on the entire collection of resources, rather than a specific member of that collection.
+      member do
+        patch :completed
+      end
+    end
+  end
+
 end
