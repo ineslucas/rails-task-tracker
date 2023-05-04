@@ -1,5 +1,6 @@
 <p><%= task.title %></p>
 <%= link_to "Delete", checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<%= link_to "Mark as Complete",  completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } %>
 
 <%# checklist_task_path(@checklist, task.id) is actually where I want to be redirected to, once the action has been completed %>
 <%# It's a route helper method that generates a URL for the destroy action of the TasksController for a specific task belonging to a given Checklist object.
