@@ -1,13 +1,19 @@
-<h1>All your checklists</h1>
+<h1 class="index-header">All your checklists</h1>
 
-<ul>
-  <% @checklists.each do |checklist| %>
+<% @checklists.each do |checklist| %>
+
+  <%# classes wrapping up title and description %>
+  <div class="index_row clearfix">
     <%= link_to checklist_path(checklist) do %>
-      <li><%= checklist.title %></li>
-      <li><%= checklist.description %></li>
-      <%= link_to "Delete", checklist_path(checklist), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <h2 class="todo_list_title"><%= checklist.title %></h2>
+      <p class="todo_list_sub_title"><%= checklist.description %></p>
+      <%= link_to "Delete", checklist_path(checklist), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "links" %>
     <% end %>
-  <% end %>
-</ul>
+  </div>
 
-<%= link_to "New Checklist", new_checklist_path, class: "btn btn-primary" %>
+<% end %>
+
+<div class="links">
+  <%= link_to "New Checklist", new_checklist_path %>
+  <%# , class: "btn btn-primary" %>
+</div>
