@@ -1,5 +1,5 @@
-<h2><%= @checklist.title %></h2>
-<p><%= @checklist.description %></p>
+<h2 class="todo_list_title"><%= @checklist.title %></h2>
+<p class="todo_list_sub_title"><%= @checklist.description %></p>
 
 <div id="tasks_wrapper">
   <%= render @checklist.tasks %>
@@ -8,6 +8,9 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_checklist_path(@checklist) %>
-<%= link_to 'Back', url_for(:back) %>
-<%= link_to 'All lists', checklists_path %>
+<div class="links">
+  <%= link_to 'Edit', edit_checklist_path(@checklist) %>
+  <%= link_to 'Back', url_for(:back) %>
+  <%= link_to "Delete", checklist_path(@checklist), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to 'All lists', checklists_path %>
+</div>

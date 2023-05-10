@@ -1,18 +1,24 @@
 <div class="row clearfix">
   <% if task.completed? %>
     <div class="complete">
-      <%= link_to "Mark as Complete", completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } %>
+      <%= link_to completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } do %>
+        <i style="opacity: 0.4;" class="fa-regular fa-check"></i>
+      <% end %>
     </div>
     <div class="task">
       <p style="opacity: 0.4;"><strike><%= task.title %></strike></p>
     </div>
     <div class="trash">
-      <%= link_to "Delete", checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%= link_to checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-regular fa-trash"></i>
+      <% end %>
     </div>
   <% else %>
   <%# if the task has not been marked as completed, then show the task content(or title?) in its normal form.  %>
     <div class="complete">
-      <%= link_to "Mark as Complete", completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } %>
+      <%= link_to completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } do %>
+        <i class="fa-regular fa-check"></i>
+      <% end %>
         <%# checklist_task_path(@checklist, task.id) is actually where I want to be redirected to, once the action has been completed %>
 
         <%# It's a route helper method that generates a URL for the destroy action of the TasksController for a specific task belonging to a given Checklist object.
@@ -22,7 +28,9 @@
       <p><%= task.title %></p>
     </div>
     <div class="trash">
-      <%= link_to "Delete", checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%= link_to checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-regular fa-trash"></i>
+      <% end %>
     </div>
   <% end %>
 </div>
