@@ -1,7 +1,6 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+//.navbar-lewagon {
+  // justify-content: flex-end;
+//}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -10,3 +9,29 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+// new navbar css
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.dropdown-item{
+  margin: 15px;
+  background-color: $white_opaque;
+  width: 100%;
+  border-radius: 60px;
+  padding: 10px;
+  text-align: right;
+}
+
+.dropdown-menu {
+  background-color: transparent;
+  border: none;
+  margin-right: 15px;
+  margin-top: 50px; /* change this to add some top margin */
+  padding-top: 10px; /* add some padding to separate the items from the menu top */
+}
+

@@ -13,9 +13,6 @@
 
 // for simplicity's sake, all of the page's CSS is listed below.
 
-$white_opaque: rgba(250, 250, 250, .3);
-$dark: #1F7972;
-
 * {
  box-sizing: border-box;
 }
@@ -92,6 +89,7 @@ body {
    margin-bottom: 0;
  }
 }
+
 
 // this wrapper wrapps the show page for each checklist
 #tasks_wrapper {
