@@ -2,7 +2,7 @@
   <% if task.completed? %>
     <div class="complete">
       <%= link_to completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } do %>
-        <i style="opacity: 0.4;" class="fa-regular fa-check"></i>
+        <i style="opacity: 0.4;" class="fa-solid fa-check"></i>
       <% end %>
     </div>
     <div class="task">
@@ -10,14 +10,14 @@
     </div>
     <div class="trash">
       <%= link_to checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-        <i class="fa-regular fa-trash"></i>
+        <i class="fa-regular fa-trash-can"></i>
       <% end %>
     </div>
   <% else %>
   <%# if the task has not been marked as completed, then show the task content(or title?) in its normal form.  %>
     <div class="complete">
       <%= link_to completed_checklist_task_path(@checklist, task.id), data: { turbo_method: :patch } do %>
-        <i class="fa-regular fa-check"></i>
+        <i class="fa-solid fa-check"></i>
       <% end %>
         <%# checklist_task_path(@checklist, task.id) is actually where I want to be redirected to, once the action has been completed %>
 
@@ -29,7 +29,7 @@
     </div>
     <div class="trash">
       <%= link_to checklist_task_path(@checklist, task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-        <i class="fa-regular fa-trash"></i>
+        <i class="fa-regular fa-trash-can"></i>
       <% end %>
     </div>
   <% end %>
