@@ -22,6 +22,8 @@ html {
 
 body {
   height: 100%;
+  margin-top: 100px; // this margin on the top also causes a weird gap at the bottom, why?
+  margin-bottom: 100px;
   background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
@@ -49,6 +51,7 @@ body {
 .container {
  width: 50%;
  max-width: 750px;
+ min-width: 350px;
  background: $white_opaque;
  margin: 3em auto 0 auto;
  border-radius: 7px;
