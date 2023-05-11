@@ -194,6 +194,13 @@ input[type="text"], textarea {
 textarea {
  height: 200px;
 }
+
+// the container that needs to go around the submit button so that it centers
+.submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 input[type="submit"] {
  background: white;
  outline: none;
