@@ -1,13 +1,14 @@
-<h1>Edit your to-do list</h1>
+<h1 class="todo_list_title">Edit your to-do list</h1>
 
 <%= simple_form_for(@checklist, html: { class: "forms" }) do |f| %>
   <%= f.input :title %>
   <%= f.input :category, collection: Checklist.categories.keys %>
   <%= f.input :description %>
-  <%= f.submit %>
+  <div class="submit-container">
+    <%= f.submit %>
+  </div>
 <% end %>
 
 <div class="links">
   <%= link_to 'Cancel', checklists_path %>
 </div>
-

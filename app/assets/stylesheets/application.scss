@@ -16,17 +16,17 @@
 * {
  box-sizing: border-box;
 }
-html {
- height: 100%;
-}
 
 body {
   height: 100%;
+  margin-top: 100px;
+  margin-bottom: 50px; // this is what's providing the 
   background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background-attachment: fixed;
 }
 
 .clearfix:before,
@@ -49,6 +49,7 @@ body {
 .container {
  width: 50%;
  max-width: 750px;
+ min-width: 350px;
  background: $white_opaque;
  margin: 3em auto 0 auto;
  border-radius: 7px;
@@ -193,6 +194,13 @@ input[type="text"], textarea {
 }
 textarea {
  height: 200px;
+}
+
+// the container that needs to go around the submit button so that it centers
+.submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 input[type="submit"] {
  background: white;
