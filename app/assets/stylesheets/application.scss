@@ -19,16 +19,14 @@
 
 body {
   height: 100%;
-  margin-top: 100px; // the background repeats
-  // margin-bottom: 400px; // it doesn't seem to be working
-  // strange that there's margin on safari but not chrome
+  margin-top: 100px;
+  margin-bottom: 50px; // this is what's providing the 
   background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   background-attachment: fixed;
-  margin-bottom: 50px;
 }
 
 .clearfix:before,
