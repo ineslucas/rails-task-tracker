@@ -47,17 +47,6 @@ body {
  font-weight: 100;
 }
 
-// this container is what's around the full body.
-.container {
- width: 50%;
- max-width: 750px;
- min-width: 350px;
- margin: 3em auto 0 auto;
- -webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
- box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
- padding: 1em 0;
-}
-
 .page_title {
   position: absolute;
   left: 8.78%;
@@ -103,13 +92,19 @@ body {
 .index_row {
   background: $purple;
   border-radius: 30px;
-  margin-bottom: 20px;
   padding: 2em;
- border-bottom: 1px solid rgba(250,250,250, .3);
+  margin: 20px auto 0 auto;
  .todo_list_sub_title {
    margin-bottom: 0;
  }
 }
+
+// this container could be only to keep stuff within a certain width
+.container {
+  width: 50%;
+  max-width: 750px;
+  min-width: 350px;
+ }
 
 
 // this wrapper wrapps the show page for each checklist

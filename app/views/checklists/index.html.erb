@@ -1,9 +1,16 @@
 <h1 class="page_title">checklist <br> central </h1>
 
+<div class="container d-flex justify-content-start gap-2" style="margin-top: 200px;">
+  <%= link_to "all", new_checklist_path, class: "status-selected" %>
+  <%= link_to "gym", new_checklist_path, class: "status-unselected" %>
+  <%= link_to "airport", new_checklist_path, class: "status-unselected" %>
+  <%= link_to "other", new_checklist_path, class: "status-unselected" %>
+</div>
+
 <% @checklists.each do |checklist| %>
 
   <%# classes wrapping up title and description %>
-  <div class="index_row clearfix">
+  <div class="index_row clearfix container">
     <%= link_to checklist_path(checklist) do %>
       <h2 class="todo_list_title"><%= checklist.title %></h2>
       <p class="todo_list_sub_title"><%= checklist.description %></p>
@@ -11,6 +18,7 @@
   </div>
 
 <% end %>
+
 
 <div class="links">
   <%= link_to "New Checklist", new_checklist_path %>
