@@ -13,9 +13,6 @@
   <body>
     <%= render "shared/flashes" %> <%# relevant for devise authentication %>
     <%= render "shared/navbar" %>
-
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>
